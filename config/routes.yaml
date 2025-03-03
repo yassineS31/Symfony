@@ -3,3 +3,15 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+App_home_hello: 
+    path: /hello
+    controller: App\Controller\HomeController::Hello
+App_home_bonjour:
+    path: /hello/{name}
+    controller: App\Controller\HomeController::helloTo
+App_accueil_addition:
+    path: /addition/{n1}/{n2}
+    controller: App\Controller\AccueilController::addition
+App_accueil_calculatrice:
+    path: /calculatrice/{n1}/{n2}/{chaine}
+    controller: App\Controller\AccueilController::calculatrice
