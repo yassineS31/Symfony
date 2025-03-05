@@ -12,9 +12,12 @@ App_home_bonjour:
 App_accueil_addition:
     path: /addition/{n1}/{n2}
     controller: App\Controller\AccueilController::addition
-App_accueil_calculatrice:
-    path: /calculatrice/{n1}/{n2}/{chaine}
-    controller: App\Controller\AccueilController::calculatrice
+# App_accueil_calculatrice:
+#     path: /calculatrice/{n1}/{n2}/{chaine}
+#     controller: App\Controller\AccueilController::calculatrice
 App_register:
     path: /register
     controller: App\Controller\UserController::register
+App_calculatrice_controller:
+    path: /calculatrice/{nombre1}/{nombre2}/{chaine}
+    controller: App\Controller\CalculatriceController::calculatrice
