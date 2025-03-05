@@ -21,3 +21,6 @@ App_register:
 App_calculatrice_controller:
     path: /calculatrice/{nombre1}/{nombre2}/{chaine}
     controller: App\Controller\CalculatriceController::calculatrice
+App_category:
+    path: /category
+    controller: App\Controller\CategoryController::showAllCategories
