@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "symfony",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

@@ -28,5 +28,6 @@ App_articles:
     path: /articles
     controller: App\Controller\ArticleController::showAllArticle
 App_account:
-    path: /accounts
-    controller: App\Controller\UserController::showAllAccounts
+    path: /api/addaccount
+    controller: App\Controller\ApiAccountController::addAccount
+    methods: POST
