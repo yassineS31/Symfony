@@ -24,3 +24,9 @@ App_calculatrice_controller:
 App_category:
     path: /category
     controller: App\Controller\CategoryController::showAllCategories
+App_articles:
+    path: /articles
+    controller: App\Controller\ArticleController::showAllArticle
+App_account:
+    path: /accounts
+    controller: App\Controller\UserController::showAllAccounts

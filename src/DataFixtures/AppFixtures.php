@@ -13,8 +13,6 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        // $product = new Product();
-        // $manager->persist($product);
             $faker = Faker\Factory::create('fr_FR');
             // Tableaux
             $accounts=[];
@@ -44,20 +42,20 @@ class AppFixtures extends Fixture
 
 
             for($i=0;$i<100;$i++){
+                $articles=[];
                 // Ajouter des articles
                 $article = new Article();
                 $article->setTitle($faker->sentence())
                         ->setContent($faker->paragraph())
                         ->setCreateAt(new \DateTimeImmutable($faker->date()))
                         ->setAuthor($accounts[$faker->numberBetween(0,49)]);
-                    
-                $article->addArticleCategory($categories[$faker->numberBetween(0,9)]);
-                $article->addArticleCategory($categories[$faker->numberBetween(10,19)]);
-                $article->addArticleCategory($categories[$faker->numberBetween(20,29)]);
+                    $article->addCategory($categories[$faker->numberBetween(0,9)]);
+                    $article->addCategory($categories[$faker->numberBetween(10,19)]);
+                    $article->addCategory($categories[$faker->numberBetween(20,29)]);
                         // Ajout en cache
                     $manager->persist($article);
+                    $articles[]= $article;
                     }
-
             //Enregistrement en base de données     
             $manager->flush();
         }

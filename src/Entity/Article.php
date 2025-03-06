@@ -32,19 +32,15 @@ class Article
      * @var Collection<int, Category>
      */
     #[ORM\ManyToMany(targetEntity: Category::class)]
-    private Collection $articleCategory;
-
-    /**
-     * @var Collection<int, Category>
-     */
-    #[ORM\ManyToMany(targetEntity: Category::class)]
     private Collection $categories;
 
     public function __construct()
     {
-        $this->articleCategory = new ArrayCollection();
         $this->categories = new ArrayCollection();
     }
+
+
+
 
     public function getId(): ?int
     {
@@ -102,30 +98,6 @@ class Article
     /**
      * @return Collection<int, Category>
      */
-    public function getArticleCategory(): Collection
-    {
-        return $this->articleCategory;
-    }
-
-    public function addArticleCategory(Category $articleCategory): static
-    {
-        if (!$this->articleCategory->contains($articleCategory)) {
-            $this->articleCategory->add($articleCategory);
-        }
-
-        return $this;
-    }
-
-    public function removeArticleCategory(Category $articleCategory): static
-    {
-        $this->articleCategory->removeElement($articleCategory);
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Category>
-     */
     public function getCategories(): Collection
     {
         return $this->categories;
@@ -146,4 +118,7 @@ class Article
 
         return $this;
     }
+
+
+
 }

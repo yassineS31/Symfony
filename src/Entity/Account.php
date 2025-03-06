@@ -1,25 +1,27 @@
 <?php
-
 namespace App\Entity;
 
 use App\Repository\AccountRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: AccountRepository::class)]
-class Account
-{
+class Account{
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
-
+    
     #[ORM\Column(length: 50)]
+    #[Groups(['account:read'])]
     private ?string $firstname = null;
 
     #[ORM\Column(length: 50)]
+    #[Groups(['account:read'])]
     private ?string $lastname = null;
 
-    #[ORM\Column(length: 100)]
+    #[ORM\Column(length: 50)]
+    #[Groups(['account:read'])]
     private ?string $email = null;
 
     #[ORM\Column(length: 100)]
@@ -27,8 +29,6 @@ class Account
 
     #[ORM\Column(length: 50)]
     private ?string $roles = null;
-
-
 
     public function getId(): ?int
     {
@@ -94,5 +94,4 @@ class Account
 
         return $this;
     }
-
 }
