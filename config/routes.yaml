@@ -31,3 +31,11 @@ App_account:
     path: /api/addaccount
     controller: App\Controller\ApiAccountController::addAccount
     methods: POST
+App_account_update:
+    path: /api/account/update
+    controller: App\Controller\ApiAccountController::updateAccount
+    methods: PUT
+App_account_delete:
+    path: /api/account/delete/{id}
+    controller: App\Controller\ApiAccountController::deleteAccount
+    methods: DELETE

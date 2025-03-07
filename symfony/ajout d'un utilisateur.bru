@@ -5,7 +5,18 @@ meta {
 }
 
 post {
-  url: https://127.0.0.1:8000/api/addaccount
-  body: none
+  url: http://127.0.0.1:8000/api/addaccount
+  body: json
   auth: none
+}
+
+body:json {
+  {
+    "firstname": "untel",
+    "lastname": "test",
+    "email": "untel@test.fr",
+    "roles": "['ROLE_USER']",
+    "password": "123456"
+  }
+  
 }
